@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+--color: white;
+--border: rgb(109, 109, 109); 
+--back: rgba(168, 168, 168, 0.1);
+--backhover:rgb(85, 85, 85) ;
+--img: url(imgs/bg-mobile-dark.jpg);
+--backborder: rgba(255, 255, 255, 0.523);
+--switchh: url(imgs/moon.svg)
+}
+
+.light {
+--color: rgb(0, 0, 0);
+--border: rgb(0, 0, 0); 
+--back: rgba(118, 118, 118, 0.1);
+--img: url(imgs/bg-mobile-light.jpg);
+--backhover: rgba(0, 0, 0, 0.21);
+--backborder: black;
+--switchh: url(imgs/sun.svg)
+   
+    
+}
+
+body {
+    background: var(--img) no-repeat top center/cover;
+    height: 100vh;
+}
+
+
+body * {
+    font-family: 'Roboto', sans-serif;
+    color: var(--color);
+
+}
+
+
+#container {
+    width: 100%;
+    max-width: 588px;
+    margin: 56px auto 0px;
+    padding:  0 24px;
+}
+
+
+#profile img {  
+    width: 112px;
+}
+
+
+#profile {
+    padding: 24px;
+    text-align: center;
+}
+
+
+#profile p {
+    font-weight: 500;
+    line-height: 30px;
+    margin-top: 8px;
+}
+#switch {
+    position: relative;
+    width: 64px;
+} 
+#switch button {
+width: 30px;
+height: 30px;
+background: white var(--switchh) no-repeat center;
+border: none;
+border-radius: 50%;
+position: absolute;
+left: 0;
+transform: translateY(-50%);
+top: 50%;
+animation: slide2 0.3s;
+}
+#switch button:hover {
+    outline:3px solid rgb(65, 65, 65);
+}
+.light #switch button {
+   animation: Slide 0.3s forwards;
+}
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--back);
+    border:1px solid var(--border);
+    border-radius: 9999px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 0;
+    
+
+}
+
+
+ul li a{
+    display: flex;
+  border: 1px solid var(--backborder);
+  justify-content: center;
+  height: 40px;
+  align-items: center;
+  background-color: var(--back);
+  border-radius: 9px;
+  text-decoration: none;
+  font-weight: 300;
+  transition: all 0.3s;
+
+  
+}
+
+
+ul li a:hover {
+    background-color: var(--backhover);
+    border: 1.5px solid white;
+}
+
+#social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    font-size: 24px;
+    padding: 24px 0px;
+    
+}
+#social-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+    border-radius: 50px;
+}
+#social-links a:hover {
+    background-color: rgba(255, 255, 255, 0.639);
+   
+}
+footer {
+    padding:  24px 0;
+    text-align: center;
+    font-size: 10px;
+}
+@keyframes Slide {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%
+    }
+
+}
+@keyframes slide2 {
+    from {
+    left: 50%;
+    }
+    to {
+        left: 0;
+    }
+}
